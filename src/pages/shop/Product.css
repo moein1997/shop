@@ -1,0 +1,24 @@
+/* Restrict product card size */
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 250px; /* Control width of each card */
+    margin: auto;
+    text-align: center;
+}
+
+/* Adjust image size */
+.product-image {
+    width: 100%;
+    height: 200px; /* Ensure consistent image height */
+    object-fit: contain; /* Contain the image inside the specified height and width */
+}
+
+
+
+.product-card {
+    margin: 5px; /* Adjust the value as needed */
+}

@@ -2,7 +2,7 @@ import React from "react"
 import { PRODUCTS } from "../../data/products"
 import Product from "./product"
 
-
+// import "./Shop.css"
 const Shop = () =>{
     return(
         <React.Fragment>

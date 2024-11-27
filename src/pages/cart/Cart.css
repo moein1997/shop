@@ -1,0 +1,28 @@
+.sales-receipt {
+    margin-top: 20px;
+}
+
+.sales-receipt h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.table tfoot {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
