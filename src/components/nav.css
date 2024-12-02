@@ -1,0 +1,11 @@
+.logo{
+    width: 100%; /* Makes the image width adapt to the parent container */
+    max-width: 100px; /* Sets a maximum width for the image */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for styling */
+}
+
+.navbar{
+    background-color: #640D5F;
+}

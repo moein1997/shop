@@ -1,15 +1,21 @@
 import React from "react"
-import { PRODUCTS } from "../../data/products"
-import Product from "./product"
+import ProductItem from "./ProductItem"
+import { ShopContext } from '../../context/shopContext';
+import { useContext } from 'react';
+// import { PRODUCTS } from "../../data/products"
+// import Product from "./product"
 
-// import "./Shop.css"
-const Shop = () =>{
+
+import "./Shop.css"
+const Shop = ()=>{
+    const {products} = useContext(ShopContext)
+
     return(
         <React.Fragment>
             <h1>Shop</h1>
             <div className="row">
-                {PRODUCTS.map((productData)=>{
-                    return <Product key={productData.id} data={productData}/>
+                {products.map((product)=>{
+                    return <ProductItem key={product.item} product={product}/>
                 })}
             </div>
         </React.Fragment>
@@ -17,3 +23,22 @@ const Shop = () =>{
 }
 
 export default Shop
+
+
+
+
+// const Shop = () =>{
+//     const {products,addToCart,removeFromCart,cartItems} = useContext(ShopContext)
+//     // const isAvailable = true;
+//     const isInCart = cartItems?.some((item)=>item.id === item.id )
+//     return(
+//         <React.Fragment>
+//             <h1>Shop</h1>
+//             <div className="row">
+//                 {products.map((product) => (
+//                     <ProductItem item={product.item}/>
+//                 )
+//             </div>
+//         </React.Fragment>
+//     ));
+// }

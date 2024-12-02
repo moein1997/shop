@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
-import { PRODUCTS } from "../../data/products";
+// import { PRODUCTS } from "../../data/products";
 import { ShopContext } from "../../context/shopContext";
 import Product from "../shop/product";
 
 const Cart = () => {
-    const { cartItems } = useContext(ShopContext);
+    const { cartItems,products } = useContext(ShopContext);
 
     // Filter products that are in the cart and have count > 0
-    const filteredProducts = PRODUCTS.filter((product) =>
+    const filteredProducts = products.filter((product) =>
         cartItems.some((item) => item.id === product.id && item.count > 0)
     );
 
     // Calculate the total cost of all items in the cart
     const totalCost = cartItems.reduce((total, cartItem) => {
-        const product = PRODUCTS.find((product) => product.id === cartItem.id);
+        const product = products.find((product) => product.id === cartItem.id);
         if (product) {
             return total + product.price * cartItem.count;
         }

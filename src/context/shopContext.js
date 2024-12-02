@@ -1,12 +1,26 @@
-import { createContext,useState } from "react";
-import { PRODUCTS } from "../data/products";
+import { createContext,useState,useEffect } from "react";
+import axios from 'axios';
+// import { PRODUCTS } from "../data/products";
 export const ShopContext = createContext(null)
 
 export const ShopContextProvider = (props)=>{
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/products')
+            .then((response) => {
+                setProducts(response.data);
+            })
+            .catch((error) => {
+                console.error('Error fetching products:', error);
+            });
+    }, []);
+
     const [cartItems, setCartItems] = useState([])
 
     const addToCart = (itemId) => {
-        const product = PRODUCTS.find((p) => p.id === itemId);
+        const product = products.find((p) => p.id === itemId);
         const cartItem = cartItems.find((item) => item.id === itemId);
 
         if (!cartItem) {
@@ -42,7 +56,7 @@ export const ShopContextProvider = (props)=>{
         }).filter(item => item.count > 0));
     };
 
-    const contextValue = {cartItems,addToCart,removeFromCart}
+    const contextValue = {cartItems,addToCart,removeFromCart,products}
 
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
 }
