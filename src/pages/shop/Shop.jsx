@@ -7,12 +7,15 @@ import { useContext } from 'react';
 
 
 import "./Shop.css"
+import Slider from "../../components/Slider";
 const Shop = ()=>{
     const {products} = useContext(ShopContext)
+    const images = ["/assets/slider1.png","/assets/slider2.png","/assets/slider3.png"]
 
     return(
         <React.Fragment>
-            <h1>Shop</h1>
+            <h1 className="shopname">Shop</h1>
+            <div className="slider-container"><Slider images={images}/></div>
             <div className="row">
                 {products.map((product)=>{
                     return <ProductItem key={product.item} product={product}/>

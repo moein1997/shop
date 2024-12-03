@@ -1,0 +1,62 @@
+/* Slider container */
+.slider {
+    position: relative;
+    width: 100%; /* Full width of the viewport or parent container */
+    margin: 0 auto;
+    overflow: hidden;
+    max-height: 600px; /* Limit the height to match the image's height */
+  }
+  
+  /* Image container with flex */
+  .slider-image-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  /* Individual slider images */
+  .slider-image {
+    flex: 0 0 100%;
+    object-fit: cover; /* Ensures images fill the container proportionally */
+    width: 100%; /* Image scales to container's width */
+    height: auto; /* Preserve aspect ratio */
+  }
+  
+  /* Navigation buttons */
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+  }
+  
+  .slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .slider-btn-prev {
+    left: 10px;
+  }
+  
+  .slider-btn-next {
+    right: 10px;
+  }
+  
+  /* Responsive styling */
+  @media screen and (max-width: 768px) {
+    .slider {
+      max-height: 300px; /* Reduce height for smaller screens */
+    }
+  
+    .slider-image {
+      height: auto;
+    }
+  }
+  

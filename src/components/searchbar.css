@@ -1,0 +1,25 @@
+.searchbar{
+    display : flex;
+    align-items : center;
+    margin-bottom : 1rem;
+}
+
+.searchbarinput{
+    padding: 0.5rem;
+    font-size: 1re;
+    flex-grow: 1;
+    margin-right: 0.5rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    width : 500px;
+}
+
+.handleClearbutton{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background: #640D5F;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}

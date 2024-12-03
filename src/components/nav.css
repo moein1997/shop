@@ -7,5 +7,15 @@
 }
 
 .navbar{
-    background-color: #640D5F;
+    background-color: #D91656;
+    /* border-radius: 20px; */
+    margin: 0px;
+}
+
+.container{
+    margin: 0px;
+}
+
+ul{
+    list-style: none;
 }

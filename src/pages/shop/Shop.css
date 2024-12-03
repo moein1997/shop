@@ -1,3 +1,34 @@
+.shopname{
+    background-color: #D91656;
+    color: white;
+}
+
 .row{
-    /* background-color: #D91656; */
+    /* background-color: #EB5B00; */
+}
+
+.shopname{
+    background-color: #EB5B00;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+    .product-image {
+        width: 100%;
+        height: 200px; /* Ensure consistent image height */
+        object-fit: contain; /* Contain the image inside the specified height and width */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}
+
+.slider-container{
+    margin: 0;
+    padding: 0;
 }
