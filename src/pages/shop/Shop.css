@@ -1,10 +1,15 @@
 .shopname{
     background-color: #D91656;
     color: white;
+    margin: 0px;
+    padding : 4px;
 }
 
-.row{
-    /* background-color: #EB5B00; */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between items in the flex container */
+    justify-content: center; /* Optional: Aligns products to the center */
 }
 
 .shopname{
