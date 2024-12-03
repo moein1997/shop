@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './slider.css';
 
-const Slider = ({ images, autoSlide = true, slideInterval = 7000 }) => {
+const Slider = ({ images, autoSlide = true, slideInterval = 4000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
