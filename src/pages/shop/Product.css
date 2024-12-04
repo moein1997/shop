@@ -20,10 +20,17 @@
 
 
 .product-card {
-    margin: 10px; /* Adds space around each product card */
+    margin: 20px; /* Adds space around each product card */
     padding: 10px; /* Optional: Adds space inside the card */
     border: 1px solid #D91656; /* Optional: Adds a border for better visibility */
     border-radius: 8px; /* Optional: Rounds the corners of the card */
     background-color: #fff; /* Optional: Sets a background color */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for styling */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the effects */
+}
+
+.product-card:hover{
+    transform: scale(1.05); /* Slightly enlarge the product item */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    border-color: #D91656; /* Change border color */
 }

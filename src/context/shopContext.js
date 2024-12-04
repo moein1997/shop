@@ -21,18 +21,23 @@ export const ShopContextProvider = (props)=>{
 
     const addToCart = (itemId) => {
         const product = products.find((p) => p.id === itemId);
+        if (!product) {
+            alert("Product not found!");
+            return;
+        }
+    
         const cartItem = cartItems.find((item) => item.id === itemId);
-
+    
         if (!cartItem) {
             // If the product is not yet in the cart, add it if availability > 0
-            if (product.availibility > 0) {
+            if (product.availability > 0) {
                 setCartItems([...cartItems, { id: itemId, count: 1 }]);
             } else {
-                alert(`Sorry, ${product.productName} is out of stock!`);
+                alert(`Sorry, ${product.product_name} is out of stock!`);
             }
         } else {
             // If the product is already in the cart, check availability
-            if (cartItem.count < product.availibility) {
+            if (cartItem.count < product.availability) {
                 setCartItems(
                     cartItems.map((item) =>
                         item.id === itemId
@@ -41,7 +46,9 @@ export const ShopContextProvider = (props)=>{
                     )
                 );
             } else {
-                alert(`Sorry, you've reached the maximum stock limit for ${product.productName}!`);
+                alert(
+                    `Sorry, you've reached the maximum stock limit for ${product.product_name}!`
+                );
             }
         }
     };

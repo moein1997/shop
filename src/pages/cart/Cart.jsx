@@ -1,21 +1,17 @@
 import React, { useContext } from "react";
-// import { PRODUCTS } from "../../data/products";
 import { ShopContext } from "../../context/shopContext";
-import Product from "../shop/product";
 
 const Cart = () => {
-    const { cartItems,products } = useContext(ShopContext);
+    const { cartItems, products } = useContext(ShopContext);
 
-    // Filter products that are in the cart and have count > 0
     const filteredProducts = products.filter((product) =>
         cartItems.some((item) => item.id === product.id && item.count > 0)
     );
 
-    // Calculate the total cost of all items in the cart
     const totalCost = cartItems.reduce((total, cartItem) => {
         const product = products.find((product) => product.id === cartItem.id);
         if (product) {
-            return total + product.price * cartItem.count;
+            return total + parseFloat(product.price || 0) * cartItem.count;
         }
         return total;
     }, 0);
@@ -30,7 +26,17 @@ const Cart = () => {
                 <div className="row">
                     {filteredProducts.map((product) => (
                         <div className="col-4" key={product.id}>
-                            <Product data={product} />
+                            <div className="cart-product-card">
+                                {/* Product Image */}
+                                <img
+                                    src={`/assets/${product.product_image}`}
+                                    alt={product.product_name}
+                                    style={{ width: "100%", height: "auto", borderRadius: "5px" }}
+                                />
+                                {/* Product Details */}
+                                <h3>{product.product_name}</h3>
+                                <p>Price: ${parseFloat(product.price || 0).toFixed(2)}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -53,10 +59,17 @@ const Cart = () => {
                             const cartItem = cartItems.find((item) => item.id === product.id);
                             return (
                                 <tr key={product.id}>
-                                    <td>{product.productName}</td>
+                                    <td>
+                                        <img
+                                            src={product.product_image}
+                                            alt={product.product_name}
+                                            style={{ width: "50px", height: "50px", borderRadius: "5px" }}
+                                        />
+                                        {product.product_name}
+                                    </td>
                                     <td>{cartItem.count}</td>
-                                    <td>${product.price.toFixed(2)}</td>
-                                    <td>${(cartItem.count * product.price).toFixed(2)}</td>
+                                    <td>${parseFloat(product.price || 0).toFixed(2)}</td>
+                                    <td>${(cartItem.count * parseFloat(product.price || 0)).toFixed(2)}</td>
                                 </tr>
                             );
                         })}

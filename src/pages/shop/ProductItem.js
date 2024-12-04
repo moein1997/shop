@@ -8,7 +8,7 @@ const ProductItem = (props) => {
     const isAvailable = true
     return (
                 <div className="col-2 product-card">
-                    <img className="product-image" src={`/assets/${product.product_image}`} alt={product.product_name} />
+                    <img className="product-image" src={`/assets/${product.category}/${product.product_image}`} alt={product.product_name} />
                     <h2>{product.product_name}</h2>
                     <p>Price: ${product.price}</p>
                     <p>Available: {product.availability}</p>

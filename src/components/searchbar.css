@@ -10,7 +10,7 @@
     flex-grow: 1;
     margin-right: 0.5rem;
     border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 15px;
     width : 500px;
 }
 
@@ -18,7 +18,7 @@
     padding: 0.5rem;
     font-size: 1rem;
     border: none;
-    background: #640D5F;
+    background: #D91656;
     color: white;
     border-radius: 20px;
     cursor: pointer;
