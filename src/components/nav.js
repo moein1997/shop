@@ -1,13 +1,25 @@
 import {Link} from "react-router-dom"
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart,faSignIn,faSignOut } from "@fortawesome/free-solid-svg-icons";
 import "./nav.css" 
 import SearchBar from "./Searchabr";
 const Nav = () =>{
     return(
         <div className="navbar navbar-dark navbar-expand-lg">
             <div className="container">
+                <ul>
+                    <li>
+                        <Link to="/signin" className="singin_icon">
+                            <p>sign-in</p><FontAwesomeIcon icon={faSignIn} />
+                        </Link>
+                    {/* </li>
+                    <li> */}
+                        <Link to="/signup" className="singup_icon">
+                            <FontAwesomeIcon icon={faSignOut} /><p>sign-up</p>
+                        </Link>
+                    </li>
+                </ul>
                 <ul>
                     <li>
                         <Link to="/" className="navbar-brand">Online Shop</Link>

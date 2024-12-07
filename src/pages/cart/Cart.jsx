@@ -29,7 +29,7 @@ const Cart = () => {
                             <div className="cart-product-card">
                                 {/* Product Image */}
                                 <img
-                                    src={`/assets/${product.product_image}`}
+                                    src={`/assets/${product.category}/${product.product_image}`}
                                     alt={product.product_name}
                                     style={{ width: "100%", height: "auto", borderRadius: "5px" }}
                                 />
@@ -61,7 +61,7 @@ const Cart = () => {
                                 <tr key={product.id}>
                                     <td>
                                         <img
-                                            src={product.product_image}
+                                            src={`/assets/${product.category}/${product.product_image}`}
                                             alt={product.product_name}
                                             style={{ width: "50px", height: "50px", borderRadius: "5px" }}
                                         />

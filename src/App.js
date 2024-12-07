@@ -9,6 +9,9 @@ import { ShopContextProvider } from './context/shopContext';
 
 import { UpperNavAds } from './components/UpperNavAds';
 import Footer from './components/Footer';
+import SignUp from './components/SignUp';
+import SignIn from './components/Signin';
+import VerifyAccount from './components/VerifyAccunt';
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/verify" element={<VerifyAccount />} />
           </Routes>
           <Footer/>
         </Router>

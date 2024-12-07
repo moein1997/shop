@@ -28,3 +28,29 @@ body {
 ul{
     list-style: none;
 }
+
+.singin_icon{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: 'inherit';
+}
+
+.singin_icon p{
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.singup_icon{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: 'inherit';
+}
+
+.singup_icon p{
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px;
+}

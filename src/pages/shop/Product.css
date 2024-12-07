@@ -32,5 +32,7 @@
 .product-card:hover{
     transform: scale(1.05); /* Slightly enlarge the product item */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-    border-color: #D91656; /* Change border color */
+    border-color: #000000; /* Change border color */
+    background-color: #dd6bd7;
+    color : white;
 }
