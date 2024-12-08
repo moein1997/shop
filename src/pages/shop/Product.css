@@ -36,3 +36,9 @@
     background-color: #dd6bd7;
     color : white;
 }
+
+
+.product_name_link:hover{
+    cursor: pointer;
+    color: green;
+}

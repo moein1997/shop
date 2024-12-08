@@ -13,9 +13,9 @@ const ProductItem = (props) => {
         navigate(`/product/${product.id}`); // Redirect to product detail page using product ID
       };
     return (
-                <div className="col-2 product-card" onClick={handleProductClick}>
+                <div className="col-2 product-card" >
                     <img className="product-image" src={`/assets/${product.category}/${product.product_image}`} alt={product.product_name} />
-                    <h2>{product.product_name}</h2>
+                    <h2 className='product_name_link' onClick={handleProductClick}>{product.product_name}</h2>
                     <p>Price: ${product.price}</p>
                     <p>Available: {product.availability}</p>
                     <p>{product.offer || "No offers available"}</p>
