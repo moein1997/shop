@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 
 const Cart = () => {
-    const { cartItems, products } = useContext(ShopContext);
+    const { cartItems, products,addToCart,removeFromCart,clearCart  } = useContext(ShopContext);
 
-    const filteredProducts = products.filter((product) =>
-        cartItems.some((item) => item.id === product.id && item.count > 0)
-    );
+    const cartItemMap = new Map(cartItems.map(item => [item.id, item.count]));
+    const filteredProducts = products.filter(product => cartItemMap.has(product.id) && cartItemMap.get(product.id) > 0);
+
 
     const totalCost = cartItems.reduce((total, cartItem) => {
         const product = products.find((product) => product.id === cartItem.id);
@@ -36,10 +36,21 @@ const Cart = () => {
                                 {/* Product Details */}
                                 <h3>{product.product_name}</h3>
                                 <p>Price: ${parseFloat(product.price || 0).toFixed(2)}</p>
+                                <button className="btn btn-info btn-sm" onClick={() => addToCart(product.id)}>+</button>
+                                <span className="mx-1">
+                                    {cartItems.find((item) => item.id === product.id)?.count || 0}
+                                </span>
+                                <button className="btn btn-info btn-sm" onClick={() => removeFromCart(product.id)}>-</button>
                             </div>
                         </div>
                     ))}
                 </div>
+                {/* Clear Cart Button */}
+                {cartItems.length > 0 && (
+                    <button className="clear-cart-button" onClick={clearCart}>
+                    Clear Carts
+                    </button>
+                )}
             </div>
 
             {/* Sales Receipt Section */}

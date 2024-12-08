@@ -1,0 +1,26 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 250px; /* Control width of each card */
+    margin: auto;
+    text-align: center;
+}
+
+
+.product-card:hover{
+    transform: scale(1.05); /* Slightly enlarge the product item */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    border-color: #000000; /* Change border color */
+    background-color: #dd6bd7;
+    color : white;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between items in the flex container */
+    justify-content: center; /* Optional: Aligns products to the center */
+}

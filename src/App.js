@@ -12,6 +12,10 @@ import Footer from './components/Footer';
 import SignUp from './components/SignUp';
 import SignIn from './components/Signin';
 import VerifyAccount from './components/VerifyAccunt';
+import CategoryPage from './components/CategoryPage';
+import ProductPage from './components/ProductPage'; // Assume this is the detailed page
+
+
 
 function App() {
   return (
@@ -26,6 +30,11 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/verify" element={<VerifyAccount />} />
+            <Route path="/watch" element={<CategoryPage category={"Watch"}/>} />
+            <Route path="/shoes" element={<CategoryPage category={"Shoes"}/>} />
+            <Route path="/sunglasses" element={<CategoryPage category={"Sunglasses"}/>} />
+            <Route path="/bag" element={<CategoryPage category={"Bag"}/>} />
+            <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
           <Footer/>
         </Router>

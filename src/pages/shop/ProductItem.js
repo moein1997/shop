@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import "./Product.css"
 import { ShopContext } from '../../context/shopContext';
+import { useNavigate } from 'react-router-dom';
 const ProductItem = (props) => {
     const product = props.product
     const {addToCart,removeFromCart,cartItems} = useContext(ShopContext)
     const isInCart = cartItems?.some((item)=>item.id === product.id )
     const isAvailable = true
+    const navigate = useNavigate();
+
+    const handleProductClick = () => {
+        navigate(`/product/${product.id}`); // Redirect to product detail page using product ID
+      };
     return (
-                <div className="col-2 product-card">
+                <div className="col-2 product-card" onClick={handleProductClick}>
                     <img className="product-image" src={`/assets/${product.category}/${product.product_image}`} alt={product.product_name} />
                     <h2>{product.product_name}</h2>
                     <p>Price: ${product.price}</p>

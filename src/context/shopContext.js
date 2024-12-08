@@ -63,7 +63,13 @@ export const ShopContextProvider = (props)=>{
         }).filter(item => item.count > 0));
     };
 
-    const contextValue = {cartItems,addToCart,removeFromCart,products}
+    const clearCart = () => {
+        if (window.confirm('Are you sure you want to clear the cart?')) {
+          setCartItems([]);
+        }
+      };
+
+    const contextValue = {cartItems,addToCart,removeFromCart,products,setCartItems,clearCart }
 
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
 }

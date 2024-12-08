@@ -37,3 +37,16 @@
     margin: 0;
     padding: 0;
 }
+
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 categories per row */
+    gap: 20px; /* Space between categories */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.category-container div {
+    text-align: center; /* Center align category text and image */
+}

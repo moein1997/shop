@@ -4,7 +4,14 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faShoppingCart,faSignIn,faSignOut } from "@fortawesome/free-solid-svg-icons";
 import "./nav.css" 
 import SearchBar from "./Searchabr";
+import { ShopContext } from "../context/shopContext";
+import { useContext } from "react";
+
 const Nav = () =>{
+    const {cartItems} = useContext(ShopContext)
+    const itemCount = cartItems.reduce((prev,current)=>{
+        return prev + current.count
+    },0)
     return(
         <div className="navbar navbar-dark navbar-expand-lg">
             <div className="container">
@@ -33,7 +40,8 @@ const Nav = () =>{
                     </li>
                     <li className="nav-item">
                         <Link to="/cart" className="nav-link">
-                            <FontAwesomeIcon icon={faShoppingCart} />
+                            <FontAwesomeIcon className="icon" icon={faShoppingCart} />
+                            {itemCount > 0 && <span className="cart-items-count">{itemCount}</span>}
                         </Link>
                     </li>
                 </ul>
